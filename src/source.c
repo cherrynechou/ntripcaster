@@ -211,7 +211,8 @@ void source_login(connection_t *con, char *expr)
 		}
 
 		add_source ();
-		sock_write_line (con->sock, "OK");
+		//cherrynechou
+		sock_write_line (con->sock, "ICY 200 OK");
 		source->connected = SOURCE_CONNECTED;
 
 		write_log (LOG_DEFAULT, "Accepted encoder on mountpoint %s from %s. %d sources connected",

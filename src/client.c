@@ -154,7 +154,9 @@ void client_login(connection_t *con, char *expr)
 
 	if (!authenticate_user_request (con, &req))
 	{
-		write_401 (con, req.path);
+		//write_401 (con, req.path);
+		//cherrynechou
+        sock_write_line (con->sock, "ERROR - Bad Password\r\n");
 		kick_not_connected (con, "Not authorized");
 		return;
 	}
